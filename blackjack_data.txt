@@ -1,0 +1,55 @@
+Outcome: L
+Player hand: [8♣], [6♣], [2♥], 
+Dealer hand: [8♣], [7♥], 
+Amount of chips won: 5
+Outcome: W
+Player hand: [4♠], [5♥], [10♣], 
+Dealer hand: [10♣], [3♥], [7♣], 
+Amount of chips won: 5
+Outcome: W
+Player hand: [9♣], [10♠], 
+Dealer hand: [10♥], [9♠], 
+Amount of chips won: 10
+Outcome: W
+Player hand: [5♥], [11♣], 
+Dealer hand: [10♥], [10♥], 
+Amount of chips won: 20
+Outcome: W
+Player hand: [6♣], [3♠], [10♥], 
+Dealer hand: [9♥], [11♣], 
+Amount of chips won: 20
+Outcome: L
+Player hand: [6♠], [5♣], [3♥], [10♥], 
+Dealer hand: [10♥], [3♠], 
+Amount of chips lost: -5
+ 
+Outcome: L
+Player hand: [5♥], [2♠], [7♣], [4♥], 
+Dealer hand: [4♥], [4♠], 
+Amount of chips lost: -5
+ 
+Outcome: W
+Player hand: [8♠], [5♠], [6♥], 
+Dealer hand: [10♠], [3♥], [7♥], 
+Amount of chips won: 5
+Outcome: L
+Player hand: [9♥], [3♥], [10♥], 
+Dealer hand: [11♥], [8♥], 
+Amount of chips lost: -4
+ 
+Outcome: W
+Player hand: [8♥], [7♣], [2♣], 
+Dealer hand: [11♣], [10♥], 
+Amount of chips won: 6
+Outcome: W
+Player hand: [8♠], [8♣], 
+Dealer hand: [9♣], [3♣], [6♠], 
+Amount of chips won: 5
+Outcome: W
+Player hand: [10♠], [8♥], 
+Dealer hand: [9♥], [10♣], 
+Amount of chips won: 15
+Outcome: W
+Player hand: [4♥], [10♥], [A♥], [2♥], 
+Dealer hand: [Q♥], [K♣], 
+Amount of chips won: 5
