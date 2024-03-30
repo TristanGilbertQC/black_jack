@@ -21,12 +21,14 @@ def wether_to_continue(left_over, final_dealer_hand, final_player_hand, win_loss
 def write_to_data(final_dealer_hand, final_player_hand, win_loss, bets):
     with open('blackjack_data.txt', 'a', encoding='utf-8') as file:  # Change file name here
         file.write("Outcome: {}\n".format(win_loss))
-        file.write("Player hand: {}\n".format(card_formating(final_player_hand)))
-        file.write("Dealer hand: {}\n".format(card_formating(final_dealer_hand)))
+        #inverted
+        file.write("Dealer hand: {}\n".format(card_formating(final_player_hand)))
+        file.write("Player hand: {}\n".format(card_formating(final_dealer_hand)))
         if win_loss == "W": file.write("Amount of chips won: {}\n".format(bets))
         else: file.write("Amount of chips lost: -{}\n \n".format(bets))
 
 def starting_chips():
+    print("\n")
     betting_chips = input("How many chips would you like to play with: ")
     if betting_chips.isdigit():
         betting_chips = int(betting_chips)
@@ -53,6 +55,8 @@ def starting_hand():
     player = []
     for i in range(2):
         player.append(draw_card())
+        print(card_formating(player))
+        input("Continue?")
     return player
 
 def dealers_hand():
@@ -115,6 +119,7 @@ def start():
 
 def play(chips):
     win_loss = ''
+    final_dealer_hand = []
     left_over_chips = chips
     print("Remaining Chips:", left_over_chips)
     while left_over_chips > 0:
@@ -122,7 +127,7 @@ def play(chips):
         players_hand = starting_hand()
         dealer_hand = dealers_hand()
         print("Player's hand:", card_formating(players_hand))
-        print("Dealer's hand:", card_formating((dealer_hand)))
+        print("Dealer's hand:", card_formating(dealer_hand))
         final_player_hand = player_choice(players_hand)
         final_player_hand_value = value(final_player_hand)
         if final_player_hand_value > 21:
@@ -132,11 +137,11 @@ def play(chips):
         else:
             final_dealer_hand = dealer_choice(dealer_hand)
             final_dealer_hand_value = value(final_dealer_hand)
-            if final_player_hand_value > 21:
-                print("You win, the dealer busts!", )
+            if final_dealer_hand_value > 21:
+                print("The dealer busts! You win!", )
                 left_over_chips += bets
                 win_loss = 'W'
-            elif final_player_hand_value < final_dealer_hand_value:
+            elif final_player_hand_value < final_dealer_hand_value or final_player_hand_value == final_dealer_hand_value:
                 print("You loose,", final_dealer_hand_value, "beats", final_player_hand_value, "you loose", bets, "chips.", '\n')
                 left_over_chips -= bets
                 win_loss = 'L'
@@ -144,9 +149,11 @@ def play(chips):
                 print("You win,", final_player_hand_value, "beats", final_dealer_hand_value, "you gain", bets, "chips.", '\n')
                 left_over_chips += bets
                 win_loss = 'W'
+        wether_to_continue(left_over_chips, final_player_hand, final_dealer_hand, win_loss, bets)
         if left_over_chips <= 0:
             print("You loose!")
             restart()
-        wether_to_continue(left_over_chips, final_player_hand, final_dealer_hand, win_loss, bets)
+
+
 
 start()
